@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #0066CC;
+  --color-primary-dark: #004d99;
+  --color-primary-light: #e6f0ff;
+  --color-secondary: #FF6B35;
+  --color-secondary-dark: #e55a25;
+  --color-secondary-light: #fff0ea;
+  --color-success: #28A745;
+  --color-success-light: #e8f5eb;
+  --color-neutral-50: #F8F9FA;
+  --color-neutral-100: #E9ECEF;
+  --color-neutral-200: #DEE2E6;
+  --color-neutral-300: #CED4DA;
+  --color-neutral-400: #ADB5BD;
+  --color-neutral-500: #6C757D;
+  --color-neutral-600: #495057;
+  --color-neutral-700: #343A40;
+  --color-neutral-800: #212529;
+  --color-neutral-900: #0d1117;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-neutral-800);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-neutral-50);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-400);
+}
+
+/* Pulse animation for CTA */
+@keyframes pulse-soft {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(255, 107, 53, 0);
+  }
+}
+
+.cta-pulse {
+  animation: pulse-soft 2.5s ease-in-out infinite;
 }
