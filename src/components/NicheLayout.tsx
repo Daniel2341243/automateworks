@@ -8,6 +8,7 @@ import {
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 import { trackCTAClick } from "@/lib/analytics";
+import CalendlyButton from "./CalendlyButton";
 import Footer from "./Footer";
 
 interface Benefit {
@@ -84,15 +85,12 @@ export default function NicheLayout({
                 <ArrowLeftIcon className="w-4 h-4" />
                 Zur Startseite
               </a>
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackCTAClick("niche_nav_cta", "niche_nav")}
-                className="inline-flex items-center justify-center px-5 py-2.5 bg-secondary text-white text-sm font-semibold rounded-lg hover:bg-secondary-dark transition-colors shadow-sm"
+              <CalendlyButton
+                source="niche_nav_cta"
+                className="inline-flex items-center justify-center px-5 py-2.5 bg-secondary text-white text-sm font-semibold rounded-lg hover:bg-secondary-dark transition-colors shadow-sm cursor-pointer"
               >
                 Termin buchen
-              </a>
+              </CalendlyButton>
             </div>
           </div>
         </div>
@@ -124,15 +122,12 @@ export default function NicheLayout({
               <p className="text-lg text-neutral-600 leading-relaxed max-w-3xl mx-auto mb-8">
                 {intro}
               </p>
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackCTAClick("niche_hero_cta", "niche_hero")}
-                className="cta-pulse inline-flex items-center justify-center px-8 py-4 bg-secondary text-white text-lg font-bold rounded-xl hover:bg-secondary-dark transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+              <CalendlyButton
+                source="niche_hero_cta"
+                className="cta-pulse inline-flex items-center justify-center px-8 py-4 bg-secondary text-white text-lg font-bold rounded-xl hover:bg-secondary-dark transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] cursor-pointer"
               >
                 Kostenlose Prozess-Analyse buchen
-              </a>
+              </CalendlyButton>
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 mt-4">
                 <span className="flex items-center gap-1.5">
                   <CheckCircleIcon className="w-4 h-4 text-success" />
@@ -376,15 +371,12 @@ export default function NicheLayout({
                 Zeitfresser und zeigen Ihnen konkret, wie viel Sie einsparen
                 können.
               </p>
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackCTAClick("niche_final_cta", "niche_final")}
-                className="cta-pulse inline-flex items-center justify-center px-10 sm:px-14 py-5 bg-secondary text-white text-xl font-extrabold rounded-2xl hover:bg-secondary-dark transition-all duration-200 shadow-2xl hover:scale-[1.03]"
+              <CalendlyButton
+                source="niche_final_cta"
+                className="cta-pulse inline-flex items-center justify-center px-10 sm:px-14 py-5 bg-secondary text-white text-xl font-extrabold rounded-2xl hover:bg-secondary-dark transition-all duration-200 shadow-2xl hover:scale-[1.03] cursor-pointer"
               >
                 Jetzt Termin buchen
-              </a>
+              </CalendlyButton>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href="tel:+491707978879"

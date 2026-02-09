@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { CheckIcon } from "@heroicons/react/24/outline";
-import { trackCTAClick } from "@/lib/analytics";
+import CalendlyButton from "./CalendlyButton";
 
 const tiers = [
   {
@@ -128,14 +128,9 @@ export default function Pricing() {
                 </ul>
 
                 {/* CTA */}
-                <a
-                  href="https://calendly.com/endlichunendlichkeit/new-meeting"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() =>
-                    trackCTAClick(`pricing_${tier.name}`, "pricing")
-                  }
-                  className={`block w-full text-center py-3.5 rounded-xl font-semibold transition-all duration-200 ${
+                <CalendlyButton
+                  source={`pricing_${tier.name}`}
+                  className={`block w-full text-center py-3.5 rounded-xl font-semibold transition-all duration-200 cursor-pointer ${
                     tier.popular
                       ? "bg-secondary text-white hover:bg-secondary-dark shadow-md hover:shadow-lg"
                       : "bg-neutral-100 text-neutral-800 hover:bg-neutral-200"
@@ -144,7 +139,7 @@ export default function Pricing() {
                   {tier.name === "Enterprise"
                     ? "Angebot anfordern"
                     : "Jetzt starten"}
-                </a>
+                </CalendlyButton>
               </div>
             </motion.div>
           ))}

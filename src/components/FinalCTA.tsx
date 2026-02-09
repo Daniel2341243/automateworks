@@ -6,7 +6,7 @@ import {
   CheckCircleIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
-import { trackCTAClick } from "@/lib/analytics";
+import CalendlyInline from "./CalendlyInline";
 
 const trustItems = [
   "Über 50 Kanzleien vertrauen uns",
@@ -47,51 +47,14 @@ export default function FinalCTA() {
             können.
           </p>
 
-          {/* Primary CTA */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <a
-              href="https://calendly.com/endlichunendlichkeit/new-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackCTAClick("final_cta", "final_section")}
-              className="cta-pulse inline-flex items-center justify-center px-10 sm:px-14 py-5 bg-secondary text-white text-xl font-extrabold rounded-2xl hover:bg-secondary-dark transition-all duration-200 shadow-2xl hover:shadow-3xl hover:scale-[1.03]"
-            >
-              Jetzt Termin buchen
-            </a>
-          </motion.div>
-
-          {/* Calendly embed placeholder */}
+          {/* Calendly Inline Embed */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-10 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-8 max-w-xl mx-auto"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-white rounded-2xl shadow-2xl overflow-hidden max-w-2xl mx-auto"
           >
-            <p className="text-white/60 text-sm mb-4">
-              Verfügbare Termine diese Woche:
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {["Mo 10:00", "Di 14:00", "Mi 11:00", "Do 15:00"].map(
-                (slot) => (
-                  <a
-                    key={slot}
-                    href="https://calendly.com/endlichunendlichkeit/new-meeting"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg py-3 px-4 text-white text-sm font-medium transition-colors text-center"
-                  >
-                    {slot}
-                  </a>
-                )
-              )}
-            </div>
-            <p className="text-white/40 text-xs mt-4">
-              Calendly-Integration &ndash; weitere Termine verfügbar nach Klick
-            </p>
+            <CalendlyInline />
           </motion.div>
 
           {/* Phone alternative */}

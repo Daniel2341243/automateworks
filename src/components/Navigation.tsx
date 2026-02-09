@@ -8,6 +8,7 @@ import {
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
 import { trackCTAClick } from "@/lib/analytics";
+import CalendlyButton from "./CalendlyButton";
 
 const navLinks = [
   { href: "#probleme", label: "Probleme" },
@@ -138,15 +139,12 @@ export default function Navigation() {
                 </a>
               )
             )}
-            <a
-              href="https://calendly.com/endlichunendlichkeit/new-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleCTAClick}
-              className="inline-flex items-center justify-center px-5 py-2.5 bg-secondary text-white text-sm font-semibold rounded-lg hover:bg-secondary-dark transition-colors shadow-sm"
+            <CalendlyButton
+              source="nav_cta"
+              className="inline-flex items-center justify-center px-5 py-2.5 bg-secondary text-white text-sm font-semibold rounded-lg hover:bg-secondary-dark transition-colors shadow-sm cursor-pointer"
             >
               Termin buchen
-            </a>
+            </CalendlyButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -237,18 +235,12 @@ export default function Navigation() {
                   </a>
                 )
               )}
-              <a
-                href="https://calendly.com/endlichunendlichkeit/new-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => {
-                  handleCTAClick();
-                  setIsMobileMenuOpen(false);
-                }}
-                className="block w-full text-center px-5 py-3 mt-2 bg-secondary text-white text-sm font-semibold rounded-lg hover:bg-secondary-dark transition-colors"
+              <CalendlyButton
+                source="nav_mobile_cta"
+                className="block w-full text-center px-5 py-3 mt-2 bg-secondary text-white text-sm font-semibold rounded-lg hover:bg-secondary-dark transition-colors cursor-pointer"
               >
                 Termin buchen
-              </a>
+              </CalendlyButton>
             </div>
           </motion.div>
         )}

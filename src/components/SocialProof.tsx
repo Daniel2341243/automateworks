@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { trackCTAClick } from "@/lib/analytics";
+import CalendlyButton from "./CalendlyButton";
 
 const caseStudies = [
   {
@@ -198,15 +198,12 @@ export default function SocialProof() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center mt-12"
         >
-          <a
-            href="https://calendly.com/endlichunendlichkeit/new-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackCTAClick("social_proof_cta", "social_proof")}
-            className="inline-flex items-center justify-center px-8 py-4 bg-secondary text-white text-lg font-bold rounded-xl hover:bg-secondary-dark transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+          <CalendlyButton
+            source="social_proof"
+            className="inline-flex items-center justify-center px-8 py-4 bg-secondary text-white text-lg font-bold rounded-xl hover:bg-secondary-dark transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] cursor-pointer"
           >
             Ähnliche Ergebnisse für mein Unternehmen
-          </a>
+          </CalendlyButton>
         </motion.div>
       </div>
     </section>

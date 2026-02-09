@@ -6,7 +6,7 @@ import {
   ClockIcon,
   CheckCircleIcon,
 } from "@heroicons/react/24/outline";
-import { trackCTAClick } from "@/lib/analytics";
+import CalendlyButton from "./CalendlyButton";
 
 export default function Hero() {
   return (
@@ -47,15 +47,12 @@ export default function Hero() {
 
             {/* Primary CTA */}
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
-              <a
-                href="https://calendly.com/endlichunendlichkeit/new-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackCTAClick("hero_primary", "hero")}
-                className="cta-pulse inline-flex items-center justify-center px-8 py-4 bg-secondary text-white text-lg font-bold rounded-xl hover:bg-secondary-dark transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+              <CalendlyButton
+                source="hero"
+                className="cta-pulse inline-flex items-center justify-center px-8 py-4 bg-secondary text-white text-lg font-bold rounded-xl hover:bg-secondary-dark transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] cursor-pointer"
               >
                 Kostenlose Prozess-Analyse buchen
-              </a>
+              </CalendlyButton>
               <a
                 href="#ergebnisse"
                 className="inline-flex items-center justify-center px-6 py-4 text-primary text-lg font-semibold hover:bg-primary-light rounded-xl transition-colors"

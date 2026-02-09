@@ -9,7 +9,7 @@ import {
   BellAlertIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
-import { trackCTAClick } from "@/lib/analytics";
+import CalendlyButton from "./CalendlyButton";
 
 const solutions = [
   {
@@ -200,15 +200,12 @@ export default function Solutions() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="text-center"
           >
-            <a
-              href="https://calendly.com/endlichunendlichkeit/new-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackCTAClick("solutions_cta", "solutions")}
-              className="inline-flex items-center justify-center px-8 py-4 bg-secondary text-white text-lg font-bold rounded-xl hover:bg-secondary-dark transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+            <CalendlyButton
+              source="solutions"
+              className="inline-flex items-center justify-center px-8 py-4 bg-secondary text-white text-lg font-bold rounded-xl hover:bg-secondary-dark transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] cursor-pointer"
             >
               Welche Automatisierung passt zu mir?
-            </a>
+            </CalendlyButton>
           </motion.div>
         </div>
       </div>

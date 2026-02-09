@@ -48,10 +48,21 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        {/* Calendly Widget CSS */}
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+        />
       </head>
       <body className="font-sans antialiased">
         {children}
         <CookieBanner />
+        {/* Calendly Widget JS */}
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        />
       </body>
     </html>
   );
