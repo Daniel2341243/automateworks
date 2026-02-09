@@ -6,7 +6,7 @@ import {
   CheckCircleIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
-import CalendlyInline from "./CalendlyInline";
+import CalendlyButton from "./CalendlyButton";
 
 const trustItems = [
   "Über 50 Kanzleien vertrauen uns",
@@ -47,14 +47,32 @@ export default function FinalCTA() {
             können.
           </p>
 
-          {/* Calendly Inline Embed */}
+          {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-white rounded-2xl shadow-2xl overflow-hidden max-w-2xl mx-auto"
           >
-            <CalendlyInline />
+            <CalendlyButton
+              source="final_cta"
+              className="cta-pulse inline-flex items-center justify-center px-10 sm:px-14 py-5 bg-secondary text-white text-xl font-extrabold rounded-2xl hover:bg-secondary-dark transition-all duration-200 shadow-2xl hover:scale-[1.03] cursor-pointer"
+            >
+              Kostenlose Prozess-Analyse buchen
+            </CalendlyButton>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/60 mt-4">
+              <span className="flex items-center gap-1.5">
+                <CheckCircleIcon className="w-4 h-4 text-success" />
+                15 Minuten
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircleIcon className="w-4 h-4 text-success" />
+                Kein Verkaufsgespräch
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircleIcon className="w-4 h-4 text-success" />
+                Konkrete Potenzial-Analyse
+              </span>
+            </div>
           </motion.div>
 
           {/* Phone alternative */}
